@@ -31,7 +31,7 @@ public class ConvertFrom {
 
     public Integer modifyStringToInt(String number) {
         if (number == null) return 0;
-        return Integer.getInteger(number);
+        return Integer.parseInt(number);
     }
 
     public String recoverIntToString(Integer id) {

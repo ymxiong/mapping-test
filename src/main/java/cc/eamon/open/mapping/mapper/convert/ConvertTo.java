@@ -1,6 +1,5 @@
 package cc.eamon.open.mapping.mapper.convert;
 
-import cc.eamon.open.mapping.mapper.Mapper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +10,6 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-@Mapper
 public class ConvertTo {
 
     private Integer id;
