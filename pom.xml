@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cc.eamon.open</groupId>
     <artifactId>mapping-test</artifactId>
-    <version>1.0.0-ALPHA</version>
+    <version>1.0.1-ALPHA</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>cc.eamon.open</groupId>
             <artifactId>mapping</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1-ALPHA</version>
         </dependency>
 
         <dependency>

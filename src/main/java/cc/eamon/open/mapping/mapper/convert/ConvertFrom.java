@@ -1,9 +1,6 @@
 package cc.eamon.open.mapping.mapper.convert;
 
-import cc.eamon.open.mapping.mapper.Mapper;
-import cc.eamon.open.mapping.mapper.MapperConvert;
-import cc.eamon.open.mapping.mapper.MapperModify;
-import cc.eamon.open.mapping.mapper.MapperRename;
+import cc.eamon.open.mapping.mapper.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,10 +13,19 @@ import java.util.List;
  */
 @Setter
 @Getter
-@Mapper
+@Mapper(
+        value = "test",
+        name = "ConvertDO"
+)
 @MapperConvert(
         value = "default",
         type = ConvertTo.class
+)
+@MapperExtra(
+        value = "default",
+        type = String.class,
+        list = false,
+        name = "test"
 )
 public class ConvertFrom {
 
