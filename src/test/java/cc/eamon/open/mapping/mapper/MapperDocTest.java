@@ -1,10 +1,10 @@
 package cc.eamon.open.mapping.mapper;
 
+import cc.eamon.open.mapping.enhancement.Doc;
 import cc.eamon.open.mapping.mapper.doc.PersonDefaultMapper;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 /**
@@ -22,9 +22,9 @@ public class MapperDocTest {
         Field[] declaredFields = clazz.getDeclaredFields();
         boolean isFindDoc = false;
         for (Field declaredField : declaredFields) {
-            MapperDoc annotation = declaredField.getAnnotation(MapperDoc.class);
+            Doc annotation = declaredField.getAnnotation(Doc.class);
             if (annotation != null && "name".equals(declaredField.getName())){
-                Assert.assertEquals("姓名", annotation.note()[0]);
+                Assert.assertEquals("姓名", annotation.note());
                 isFindDoc = true;
                 break;
             }
