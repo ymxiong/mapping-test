@@ -12,6 +12,6 @@ import lombok.Setter;
 @Getter
 public class ConvertTo {
 
-    private Integer id;
+    private String number;
 
 }

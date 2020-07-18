@@ -12,7 +12,10 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-@Mapper
+@Mapper(
+        value = {"default"},
+        name = {"PersonDefaultMapper"}
+)
 @MapperDoc(value = "default", note = "人")
 public class Person {
 

@@ -14,34 +14,18 @@ import java.util.List;
 @Setter
 @Getter
 @Mapper(
-        value = "test",
-        name = "ConvertDO"
+        value = "default",
+        name = "ConvertData"
 )
 @MapperConvert(
         value = "default",
         type = ConvertTo.class
 )
-@MapperExtra(
-        value = "default",
-        type = String.class,
-        list = false,
-        name = "test"
-)
 public class ConvertFrom {
+    private String name;
 
-    @MapperRename(value = "default", name = "id")
-    @MapperModify(value = "default", modify = "modifyStringToInt", recover = "recoverIntToString")
     private String number;
 
     private List<ConvertFrom> covertFroms;
-
-    public Integer modifyStringToInt(String number) {
-        if (number == null) return 0;
-        return Integer.parseInt(number);
-    }
-
-    public String recoverIntToString(Integer id) {
-        return id + "";
-    }
 
 }

@@ -1,7 +1,7 @@
 package cc.eamon.open.mapping.mapper;
 
+import cc.eamon.open.mapping.mapper.convert.ConvertData;
 import cc.eamon.open.mapping.mapper.convert.ConvertFrom;
-import cc.eamon.open.mapping.mapper.convert.ConvertFromDefaultMapper;
 import cc.eamon.open.mapping.mapper.convert.ConvertTo;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,19 +20,19 @@ public class MapperConvertTest {
         ConvertFrom convertFromMain = new ConvertFrom();
         convertFromMain.setNumber("1");
         ConvertTo convertTo = new ConvertTo();
-        ConvertFromDefaultMapper.convert(convertFromMain, convertTo);
-        Assert.assertEquals(convertFromMain.getNumber(), convertTo.getId() + "");
+        ConvertData.convert(convertFromMain, convertTo);
+        Assert.assertEquals(convertFromMain.getNumber(), convertTo.getNumber() + "");
     }
 
     @Test
     public void testMapperParse(){
         ConvertFrom convertFromMain = new ConvertFrom();
         convertFromMain.setNumber("1");
-        Map<String, Object> objectMap =  ConvertFromDefaultMapper.buildMap(convertFromMain);
-        Map<String, String> stringMap = ConvertFromDefaultMapper.buildSerialMap(convertFromMain);
+        Map<String, Object> objectMap =  ConvertData.buildMap(convertFromMain);
+        Map<String, String> stringMap = ConvertData.buildSerialMap(convertFromMain);
 
-        ConvertFrom from1 = ConvertFromDefaultMapper.parseEntity(objectMap);
-        ConvertFrom from2 = ConvertFromDefaultMapper.parseSerialEntity(stringMap);
+        ConvertFrom from1 = ConvertData.parseEntity(objectMap);
+        ConvertFrom from2 = ConvertData.parseSerialEntity(stringMap);
 
         Assert.assertEquals(from1.getNumber(), "1");
         Assert.assertEquals(from2.getNumber(), "1");

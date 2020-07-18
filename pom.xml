@@ -49,7 +49,7 @@
         <dependency>
             <groupId>cc.eamon.open</groupId>
             <artifactId>mapping</artifactId>
-            <version>1.0.1-ALPHA</version>
+            <version>1.0.5-ALPHA</version>
         </dependency>
 
         <dependency>
